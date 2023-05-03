@@ -1,12 +1,27 @@
 package com.crosa.animals.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbl_rato")
 public class RatoEntity {
 	
+	
+	 @Id
+	 @Column(name = "id_rato")
+	 private String id;
+	 
+	 @Column(name = "nome_rato")
 	 private String nome;
 
+	 @Column(name = "idade_rato")
 	 private Integer idade;
-
-	 private String raça;
+	 
+	 @Column(name = "raca_rato")
+	 private String raca;
 	 
 	 public String getNome() {
 	      return nome;
@@ -24,19 +39,19 @@ public class RatoEntity {
 	     this.idade = idade;
 	 }
 
-	 public String getRaça() {
-	     return raça;
+	 public String getRaca() {
+	     return raca;
 	 }
 
-	 public void setRaça(String raça) {
-	     this.raça = raça;
+	 public void setRaca(String raca) {
+	     this.raca = raca;
 	 }
 
-	 public RatoEntity(String nome, Integer idade, String raça) {
+	 public RatoEntity(String nome, Integer idade, String raca) {
 		super();
 		this.nome = nome;
 		this.idade = idade;
-		this.raça = raça;
+		this.raca = raca;
 	 }
 
 	 public String roer(){
@@ -48,11 +63,19 @@ public class RatoEntity {
 	 }
 
 	 public String comer(){
-	      return "Comeu a ração do luke ";
+	      return "Comeu a racão do luke ";
 	 }
 
 	 public void morrer(){
 	      System.out.println("morreu o ratinho");
 	 }
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 	    
 }

@@ -1,20 +1,35 @@
 package com.crosa.animals.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbl_cachorro")
 public class CachorroEntity {
 	
+		@Id
+		@Column(name = "id_cachorro")
+		private String id;
+	
+		@Column(name = "nome_cachorro")
 	 	private String nome;
-
-	    private String raça;
-
+		
+		@Column(name = "raca_cachorro")
+	    private String raca;
+		
+		@Column(name = "idade_cachorro")
 	    private Integer idade;
-
+		
+		@Column(name = "peso_cachorro")
 	    private Double peso;
 
 	     
-	    public CachorroEntity(String nome, String raça, Integer idade, Double peso) {
+	    public CachorroEntity(String nome, String raca, Integer idade, Double peso) {
 			super();
 			this.nome = nome;
-			this.raça = raça;
+			this.raca = raca;
 			this.idade = idade;
 			this.peso = peso;
 		}
@@ -33,14 +48,14 @@ public class CachorroEntity {
 
 
 
-	    public String getRaça() {
-	        return raça;
+	    public String getRaca() {
+	        return raca;
 	    }
 
 
 
-	    public void setRaça(String raça) {
-	        this.raça = raça;
+	    public void setRaca(String raca) {
+	        this.raca = raca;
 	    }
 
 
@@ -102,4 +117,4 @@ public class CachorroEntity {
 // DAO
 // D => data - representa os dados
 // A => acess - acesso aos dados
-// O => object - representação gerenica  dos dados
+// O => object - representacão gerenica  dos dados

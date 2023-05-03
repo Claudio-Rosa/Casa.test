@@ -1,58 +1,80 @@
 package com.crosa.animals.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbl_gato")
 public class GatoEntity {
+
+	@Id
+	@Column(name = "id_gato")
+	private Integer id;
+
+	@Column(name = "nome_gato")
+	private String nome;
 	
-	  	private String nome;
+	@Column(name = "raca_gato")
+	private String raca;
+	
+	@Column(name = "idade_gato")
+	private Integer idade;
 
-	  	private String raça;
+	public String getNome() {
+		return nome;
+	}
 
-	  	private Integer idade;
+	public void setNome(String nome) {
+		this.nome = nome; // CRUD
+	}
 
-	  	public String getNome() {
-	        return nome;
-	    }
+	public String getRaca() {
+		return raca;
+	}
 
-	     public void setNome(String nome) {
-	        this.nome = nome;
-	    }
+	public void setRaca(String raca) {
+		this.raca = raca;
+	}
 
-	    public String getRaça() {
-	        return raça;
-	    }
+	public Integer getIdade() {
+		return idade;
+	}
 
-	    public void setRaça(String raça) {
-	        this.raça = raça;
-	    }
+	public void setIdade(Integer idade) {
+		this.idade = idade;
+	}
 
-	    public Integer getIdade() {
-	        return idade;
-	    }
+	public GatoEntity(String nome, String raca, Integer idade) {
+		super();
+		this.nome = nome;
+		this.raca = raca;
+		this.idade = idade;
+	}
 
-	    public void setIdade(Integer idade) {
-	        this.idade = idade;
-	    }
+	public String comer() {
+		return "Come gatinho, come";
+	}
 
-		public GatoEntity(String nome, String raça, Integer idade) {
-			super();
-			this.nome = nome;
-			this.raça = raça;
-			this.idade = idade;
-		}
-	    
-		public String comer(){
-		        return "Come gatinho, come";
-		}
-		public String reinar(){
-	        return "Saaaaaiiii daaaiiiii";
-		}
+	public String reinar() {
+		return "Saaaaaiiii daaaiiiii";
+	}
 
-		public String beber(){
-		    return "Toma agua gatinho";
-		}
+	public String beber() {
+		return "Toma agua gatinho";
+	}
 
-		public void miar(){
-		    System.out.println("MEEEEEAAAAWWWW");
-		}
-	    
+	public void miar() {
+		System.out.println("MEEEEEAAAAWWWW");
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 }
